@@ -34,6 +34,10 @@ class Shared::AdvancedSearchComponent < ApplicationComponent
       super(advanced_search[:goal])
     end
 
+    def target_options
+      super(advanced_search[:target])
+    end
+
     def sdg?
       SDG::ProcessEnabled.new(controller_path).enabled?
     end
