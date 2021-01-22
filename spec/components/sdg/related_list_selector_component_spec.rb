@@ -5,6 +5,11 @@ describe SDG::RelatedListSelectorComponent, type: :component do
   let(:form) { ConsulFormBuilder.new(:debate, debate, ActionView::Base.new, {}) }
   let(:component) { SDG::RelatedListSelectorComponent.new(form) }
 
+  before do
+    Setting["feature.sdg"] = true
+    Setting["sdg.process.debates"] = true
+  end
+
   it "renders sdg_related_list field" do
     render_inline component
 
